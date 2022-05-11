@@ -3,6 +3,7 @@
 describe('Create a New Item', () => {
   beforeEach(() => {
     cy.visit('/jetsetter');
+    
   });
 
   it('should have a form', () => {
@@ -13,7 +14,7 @@ describe('Create a New Item', () => {
     cy.get('[data-test="add-item"]').should('be.disabled');
   });
 
-  it('should enable "Add Item" when text is in the input field', () => {
+  it.only('should enable "Add Item" when text is in the input field', () => {
     cy.get('[data-test="new-item-input"]').type('Good Attitude');
     cy.get('[data-test="add-item"]').click();
   });
